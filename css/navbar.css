@@ -1,0 +1,111 @@
+@font-face {
+    font-family: oleo;
+    src: url("../fonts/Oleo.woff");
+}
+
+* {box-sizing: border-box;}
+
+/*///////////////////////////////// NAVBAR ////////////////////////////////*/
+
+.topNav {
+    overflow: hidden;
+    background-color: #e9e9e9;
+}
+
+.topNav .pageTitle {
+    /* position:fixed; */
+    /* left: 60px; */
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: oleo;
+}
+
+.topNav a img {
+    float: left;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    padding: 0px 0px 0px 0px;
+    cursor: pointer;
+}
+
+.topNav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topNav .search-container {
+    float: left;
+    /* position: fixed; */
+    /* left: 225px; */
+    width: 470px;
+}
+
+.topNav input[type=text] {
+    width: 80%;
+    padding: 6px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 16px;
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.topNav .search-container button {
+    width: 20%;
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background: rgb(88, 155, 243);
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.topNav .search-container button:hover {
+    background: rgb(157, 214, 236);
+}
+
+/*///////////////////////////////// SEARCH BAR ////////////////////////////////////*/
+
+input.text{
+    color:gray;
+    border-width:1px;
+    border-color: lightgray;
+    border-style: solid;
+    width: 150px;
+}
+
+div.suggestions{
+    position:absolute;
+    top:46px;
+    left:220px;
+    z-index:10;
+    border-color:lightgray;
+    background-color:white;
+    border-style:solid;
+    border-width: 1px;
+    width:470px;
+    overflow:auto;
+    display:none;
+}
+
+div.sub_suggestions{
+    width:470px;
+    padding: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+div.sub_suggestions:hover{
+    background-color: rgb(245, 245, 245);
+}

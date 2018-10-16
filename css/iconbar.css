@@ -1,0 +1,21 @@
+/*///////////////////////////////// ICON BAR ////////////////////////////////*/
+
+.icons{
+    position:relative;
+    top:10px;
+    height:40px;
+}
+
+.icons img{
+    float:right;
+}
+
+.icons img:hover{
+    cursor:pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .icons {
+        float: none;
+    }
+}

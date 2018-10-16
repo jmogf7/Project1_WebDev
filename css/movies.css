@@ -1,0 +1,147 @@
+/*///////////////////////////// GRID STYLING /////////////////////////////*/
+
+.grid {
+    position:relative;
+}
+
+.grid .movie{
+    position:relative;
+    float:left;
+    width: 200px;
+    height: 200px;
+    margin-top:30px;
+    margin-left:30px;
+}
+
+.grid .movie img{
+    position:absolute;
+    background-color: white;
+    padding: 5px;
+    border:1px solid lightgray;
+    width: 200px;
+    height: 200px;
+}
+
+.grid .description {
+    position:absolute;
+    left:6px;
+    bottom:6px;
+    height:40px;
+    width:188px;
+    background-color:rgba(0,0,0,0.4);
+    color:white;
+    text-align: center;
+    font-size: 14px;
+    display: block;
+}
+
+.grid div.movie:hover .description{
+    bottom:6px;
+    height:120px;
+    background-color:rgba(0,0,0,0.6);
+}
+
+.grid .hover_description {
+    position:absolute;
+    left:6px;
+    bottom:6px;
+    height:40px;
+    width:188px;
+    background-color:rgba(0,0,0,0.7);
+    color:white;
+    text-align: left;
+    font-size: 12px;
+    z-index: 2;
+    display: none;
+} 
+
+.grid div.movie:hover .hover_description{
+    display:block;
+}
+
+/*///////////////////////////// LIST STYLING /////////////////////////////*/
+
+.list .movie{
+    position:relative;
+    height:260px;
+    width:90%;
+    border-bottom: 1px dotted lightgray;
+}
+
+.list .movie:last-child{
+    border-bottom-width:0px;
+}
+
+.list .starring{
+    position:absolute;
+    top:50px;
+    left:250px;
+    padding:5px;
+}
+
+.list .rating {
+    position: absolute;
+    top: 80px;
+    left: 250px;
+    padding: 5px;
+}
+
+.list .movie .rating img {
+    width: 20px;
+    height: 20px;
+    float: left;
+}
+
+.movie .title_container{
+    position:absolute;
+    top:20px;
+    left:255px;
+    width:300px;
+}
+
+.list .description{
+    position:absolute;
+    border:1px solid rgb(245,245,245);
+    border-radius: 4px;
+    background-color: rgb(236,255,255);
+    width:450px;
+    height:120px;
+    overflow:auto;
+    top:110px;
+    left:255px;
+    padding:10px;
+    font-size:14px;
+    text-align:justify;
+    line-height: 1.5;
+}
+
+.list .movie img{
+    position:absolute;
+    z-index:0;
+    top:15px;
+    left:10px;
+    width:220px;
+    height:220px;
+    padding:5px;
+    background-color:white;
+    border: 1px solid lightgray;
+}
+
+.list .title, .list .date{
+    position:relative;
+    float:left;
+    height:15px;
+    line-height: 15px;
+    text-transform: uppercase; 
+}
+
+.list .title{
+    font-weight:bold;
+}
+
+
+.list .date{
+    margin:0px 0px 0px 5px;
+    font-size:15px;
+    color:gray;
+}

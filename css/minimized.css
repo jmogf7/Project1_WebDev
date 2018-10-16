@@ -1,0 +1,31 @@
+@media screen and (max-width: 600px) {
+    .topNav .search-container {
+        /* float: none; */
+        width: 100%;
+    }
+    .topNav a {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+    .topNav input[type=text] {
+        border: 1px solid #ccc;  
+    }
+    .topNav a img {
+        display: none;
+    }
+    .suggestions {
+        /* width:100%; */
+        position: absolute;
+        /* left: 8px; */
+        top: 125px;
+        display: none;
+        overflow: auto;
+    }
+    .sub_suggestions {
+        font-size: 10px;
+    }
+}
