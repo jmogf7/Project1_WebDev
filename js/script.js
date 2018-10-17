@@ -10,16 +10,12 @@ function Controller(data) {
     this.grid_icon="#grid_icon";
     this.list_icon="#list_icon";
     this.sort_by="#sort_by";
-    // this.grid_view_template="#grid-view-template";
-    // this.list_view_template="#list-view-template";
     this.search_bar="#search_bar";
     this.search_button="#search_button";
-
-    this.gold_star_src="'../icons/gold_star.png'";
-    this.regular_star_src="'../icons/regular_star.png'";
     
     var self = this;
 
+    // FUNCTIONS
     var make_grid_function=function(){
         self.make_grid.call(self);
     };
@@ -36,6 +32,7 @@ function Controller(data) {
         self.filter_movies.call(self);
     };
     
+    // EVENTS
     $(this.grid_icon).on("click", make_grid_function);
     $(this.grid_icon).on("click", filter_movies_function);
     $(this.list_icon).on("click", make_list_function);
@@ -47,12 +44,6 @@ function Controller(data) {
 }
 
 Controller.prototype.load_movies = function() {
-    //get the template
-    // var template=$(this.movie_template).html(); //get the template
-    // var html_maker = new htmlMaker(template); //create an html Maker
-    // var html = html_maker.getHTML(this.movies); //generate dynamic HTML based on the data
-    // $(this.movies_div).html(html);
-
     var html = "";
     //loop through and display all movies
     for (var i = 0; i < this.movies.length; i++)
@@ -62,6 +53,7 @@ Controller.prototype.load_movies = function() {
 };
 
 Controller.prototype.sort_movies=function(){
+    //sort_movies based on year or rating
     var by=$(this.sort_by).val().toLowerCase();
     this.movies=this.movies.sort(
             function(a,b){
@@ -95,16 +87,20 @@ Controller.prototype.filter_movies=function(){
     for (var i = 0; i < this.movies.length; i++) {
         html += make_image(this.movies[i]);
     }
+    //reset the this.movies to all the movies
+    this.movies = movies["movies"];
     $(this.movies_div).html(html);
 };
 
 Controller.prototype.make_grid = function () {
+    //change the layout of the page and the display of the icon
     $(this.movies_div).attr("class", "grid");
     $(this.grid_icon).attr("src", "../icons/grid_pressed.jpg");
     $(this.list_icon).attr("src", "../icons/list.jpg");
 };
 
 Controller.prototype.make_list = function () {
+    //change the layout of the page and the display of the icon
     $(this.movies_div).attr("class", "list");
     $(this.grid_icon).attr("src", "../icons/grid.jpg");
     $(this.list_icon).attr("src", "../icons/list_pressed.jpg");
@@ -132,7 +128,15 @@ function make_image(data) {
         html +=     "<div class='description'>"+ data["description"] + "</div>";
         html +=     "<div class='starring'>" + "<b>Starring: </b>" + data["starring"] + "</div>";
         html +=     "<div class='rating'>" + "<b>Rating: </b>";
-        // html +=     "<img src='../icons/gold_star.png'>";
+        //display the stars (gold stars for each rating value, regular stars for the rest)
+        for (var i=1; i <= 5; i++) {
+            if (i <= data["rating"]) {
+                html +=     "<img src='../icons/gold_star.png'>";
+            }
+            else {
+                html +=     "<img src='../icons/regular_star.png'>";
+            }
+        }
         html +=     "</div>"
         html +=     "<img src='../" + data["photo"] + "'>";
         html += "</div>";

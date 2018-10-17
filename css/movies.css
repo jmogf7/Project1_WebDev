@@ -11,6 +11,7 @@
     height: 200px;
     margin-top:30px;
     margin-left:30px;
+    max-width: 100%;
 }
 
 .grid .movie img{
@@ -84,12 +85,17 @@
     top: 80px;
     left: 250px;
     padding: 5px;
+    display:inline;
 }
 
 .list .movie .rating img {
+    position:relative;
+    padding: 0px;
+    border:none;
     width: 20px;
     height: 20px;
-    float: left;
+    top: 0px;
+    left: 0px;
 }
 
 .movie .title_container{
